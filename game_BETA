@@ -1,0 +1,35 @@
+import random
+mode=int(input('how many problems do you want?'))
+score=0
+for time in range(0,mode):
+    way=random.randint(1,4)
+    if way<=3:
+        a=random.randint(0,100)
+        b=random.randint(0,100)
+        if way==1:
+            rig=a+b
+            print(a,'+',b,'=?')
+            ans=int(input())
+        elif way==2:
+            rig=a-b
+            print(a,'-',b,'=?')
+            ans=int(input())
+        elif way==3:
+            rig=a*b
+            print(a,'*',b,'=?')
+            ans=int(input())
+        if ans==rig:
+            score=score+1
+    elif way==4:
+        rig=random.randint(10,100)
+        b=random.randint(5,20)
+        a=rig*b
+        print(a,'/',b,'=?')
+        ans=int(input())
+        if ans==rig:
+            score=score+1
+per=int((score/mode)*100)
+print('score',score)
+print(per,'%')
+
+    
